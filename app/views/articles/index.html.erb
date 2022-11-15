@@ -1,0 +1,12 @@
+<h1 class="p-3 mb-3 w-75 m-auto text-center border border-dark bg-dark rounded text-white">Articles</h1>
+
+<div class="text-center p-3 mb-3">
+  <%= link_to '<i class="fa-solid fa-square-plus fa-xl p-2 link-unstyled"></i> New article'.html_safe, new_article_path, :style => 'text-decoration: none'  %>
+</div>
+
+<% @articles.each do |article| %>
+  <div class="border border-dark rounded p-3 mb-3 text-center w-75 m-auto">
+    <h4 class="p-1"><%= link_to article.title, article_path(article), :style => 'color: darkgray;', class: 'link text-decoration-none' %></h4>
+    <p><%= article.content %></p>
+  </div>
+<% end %>
